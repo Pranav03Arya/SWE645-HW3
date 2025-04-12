@@ -5,6 +5,8 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
+import java.util.List;
+
 
 @Entity
 @Table(name = "surveys")
@@ -22,9 +24,9 @@ public class survey {
     private String telephoneNumber;
     private String email;
     private String dateofSurvey;
-    private String likedMost;
-    private String interestSource;
-    private String recommendLikelihood;
+    private List<String> likedMost;
+    private List<String> interestSource;
+    private List<String> recommendLikelihood;
 
     // Getters and Setters
 }
