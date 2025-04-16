@@ -29,4 +29,23 @@ public class SurveyService {
     public void deleteSurvey(Long id) {
         repository.deleteById(id);
     }
+
+    public Optional<survey> updateSurvey(Long id, survey updatedSurvey) {
+        return repository.findById(id)
+            .map(existingSurvey -> {
+                updatedSurvey.setId(id);
+                
+                if (updatedSurvey.getLikedMost() == null) {
+                    updatedSurvey.setLikedMost(java.util.Collections.emptyList());
+                }
+                if (updatedSurvey.getInterestSource() == null) {
+                    updatedSurvey.setInterestSource(java.util.Collections.emptyList());
+                }
+                if (updatedSurvey.getrecommendationLikelihood() == null) {
+                    updatedSurvey.setrecommendationLikelihood(java.util.Collections.emptyList());
+                }
+                
+                return repository.save(updatedSurvey);
+            });
+    }
 }

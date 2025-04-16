@@ -33,6 +33,15 @@ public class survey {
     public survey() {
 
     }
+    
+    public Long getId() {
+        return id;
+    }
+    
+    public void setId(Long id) {
+        this.id = id;
+    }
+    
     public survey(String firstName, String lastName, String streetAddress, String city, String state, String zip, String telephoneNumber, String email, String dateofSurvey, List<String> likedMost, List<String> interestSource, List<String> recommendationLikelihood  ) {
         this.firstName = firstName;
         this.lastName = lastName;
